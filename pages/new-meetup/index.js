@@ -1,7 +1,8 @@
 
-import React, { useEffect, useRef, useState,Fragment } from "react";
+import React, { useEffect, useRef, useState, Fragment } from "react";
+import { useRouter } from 'next/router';
 function NewMeetupPage() {
-
+   const router= useRouter();
     const meetupData = {
         title: "Hello",
         image: "dummy",
@@ -19,6 +20,7 @@ function NewMeetupPage() {
         });
         const data = await response.json();
         console.log(data);
+        router.push('/')
     }
     useEffect(() => {
         addMeetupHandler();
