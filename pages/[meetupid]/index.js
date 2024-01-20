@@ -1,9 +1,14 @@
 import { Fragment } from "react";
 // import { MongoClient, ObjectId } from "mongodb";
+import Head from "next/head";
 
 function MeetupDetails(props) {
   return (
     <Fragment>
+      <Head>
+        {/* <title>{props.meetupData.title}</title>
+        <meta name="description" content={props.meetupData.description}></meta> */}
+      </Head>
       <h1>Hello Id</h1>
       {/* <h1>{props.meetupData.image}</h1>
       <h1>{props.meetupData.title}</h1>
@@ -47,8 +52,6 @@ function MeetupDetails(props) {
 //         address:selectedMeetup.address,
 //         image:selectedMeetup.image,
 //         description:selectedMeetup.description,
-        
-
 
 //       },
 //     },
