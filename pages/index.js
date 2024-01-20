@@ -7,7 +7,7 @@ function HomePage({ meetups }) {
 
 export async function getStaticProps() {
   try {
-    const client = await MongoClient.connect('your-mongodb-connection-string');
+    const client = await MongoClient.connect('mongodb+srv://mnbch52:bcNAF4KhWSi67P47@cluster0.r5colis.mongodb.net/meetups?retryWrites=true&w=majority');
     const db = client.db();
     const meetupsCollection = db.collection('meetups');
     const meetups = await meetupsCollection.find().toArray();
