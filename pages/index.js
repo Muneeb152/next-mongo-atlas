@@ -1,4 +1,5 @@
 // pages/index.js
+"use client"
 import { MongoClient } from 'mongodb';
 
 function HomePage({ meetups }) {
