@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState, Fragment } from "react";
 import { useRouter } from "next/router";
-import { MongoClient } from "mongodb";
+// import { MongoClient } from "mongodb";
+import Head from "next/head";
 function NewMeetupPage() {
   const router = useRouter();
   const meetupData = {
@@ -35,11 +36,15 @@ function NewMeetupPage() {
   }
 
   useEffect(() => {
-    addMeetupHandler();
-    readMeetupHandler();
+    //addMeetupHandler();
+    //readMeetupHandler();
   }, []);
   return (
     <Fragment>
+             <Head>
+        <title>Add a new Meetup</title>
+        <meta name="description" content="Add your own meetups and create amazing networking opportunities."></meta>
+      </Head>
       <h1>New Meetup Page</h1>
     </Fragment>
   );

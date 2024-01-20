@@ -1,23 +1,35 @@
 // pages/index.js
-"use client"
-import { MongoClient } from 'mongodb';
+"use client";
+import Head from "next/head";
+import { MongoClient } from "mongodb";
+import { Fragment } from "react";
 
 function HomePage({ meetups }) {
-  return <div>Welcome to Next.jss!</div>;
+  return (
+    <Fragment>
+      <Head>
+        <title>React Meetups</title>
+        <meta name="description" content="Browse ahuge list of highly active React Meetups"></meta>
+      </Head>
+      <div>Welcome to Next.jss!</div>
+    </Fragment>
+  );
 }
 
 export async function getStaticProps() {
   try {
-    const client = await MongoClient.connect('mongodb+srv://mnbch52:bcNAF4KhWSi67P47@cluster0.r5colis.mongodb.net/meetups?retryWrites=true&w=majority');
+    const client = await MongoClient.connect(
+      "mongodb+srv://mnbch52:bcNAF4KhWSi67P47@cluster0.r5colis.mongodb.net/meetups?retryWrites=true&w=majority"
+    );
     const db = client.db();
-    const meetupsCollection = db.collection('meetups');
+    const meetupsCollection = db.collection("meetups");
     const meetups = await meetupsCollection.find().toArray();
     console.log("Meetups from database are:", meetups);
     client.close();
 
     return {
       props: {
-        meetups: meetups.map(meetup => ({
+        meetups: meetups.map((meetup) => ({
           title: meetup.title,
           address: meetup.address,
           image: meetup.image,
