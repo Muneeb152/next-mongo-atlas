@@ -5,7 +5,7 @@ async function handler(req, res) {
     //const data = req.body;
     //const { title, image, address, description } = data;
     const data = {
-      title: "Hello",
+      title: "Deployed",
       image: "dummy",
       address: "Pak",
       description: "desc",

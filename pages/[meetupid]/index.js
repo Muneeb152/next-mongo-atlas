@@ -27,7 +27,7 @@ function MeetupDetails(props) {
 //   console.log("Meetups from database are:", meetups);
 //   client.close();
 //   return {
-//     fallback: false,
+//     fallback: 'blocking', // or set to true
 //     paths: meetups.map((meetup) => ({
 //       params: { mmetupId: meetup._id.toString() },
 //     })),
